@@ -11,7 +11,7 @@ jobs:
       - run:
           name: "Build Docker image"
           command: |
-            echo ${DOCKER_HUB_PASSWORD} | docker login -u ${DOCKER_HUB_LOGIN} --password-stdin
+            echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_LOGIN --password-stdin
             docker build -t kyaary/cd-app .
             docker push kyaary/cd-app
 workflows:
